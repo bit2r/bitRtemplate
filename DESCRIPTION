@@ -1,0 +1,16 @@
+Package: bitRtemplate
+Type: Package
+Title: bitR Document Templates
+Version: 0.1.0.9000
+Authors@R: c(
+  person("Choonghyun", "Ryu",, "choonghyun.ryu@gmail.com", role = c("aut", "cre"))
+  )
+Description: A collection of templates for create the documents.
+Imports: 
+    rmarkdown,
+    glue,
+    stringr
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1

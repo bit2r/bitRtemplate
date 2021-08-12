@@ -1,0 +1,73 @@
+---
+title: "Html Header"
+author: "Your name"
+date: " `r format(Sys.Date(), '%Y-%m-%d')`"
+always_allow_html: yes
+output:
+  bitRtemplate::bitr_templ_html:
+    toc: true
+    maintitle: "Doc Title"    
+    subtitle: "Using bitR Templeate"
+    menu_url: "https://www.r-project.org/,https://r2bit.com/"
+    menu_name: "R Project, bitR"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      collapse = FALSE,
+                      comment = "",
+                      fig.align = "center")
+knitr::opts_chunk$set(fig.width = 10, fig.height = 7)
+
+library(bitRtemplate)
+```
+
+```{css, echo=FALSE}
+:root {
+  --custom-grey60: rgb(102, 102, 102);
+  --custom-grey20: rgb(204, 204, 204);
+  --custom-grey10: rgb(230, 230, 230);
+  --custom-blue: rgb(0, 114, 188);
+  --custom-lightblue: rgb(204, 227, 242);
+  --custom-orange: rgb(255, 127, 42); 
+  --custom-lightorange: rgb(255, 204, 170); 
+}
+
+.navbar {
+    border-bottom : 2px solid var(--custom-lightblue) !important;
+}
+```
+
+## Introduction
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+Please, review the below:
+
+* Having a specific title will help avoid having someone browse posts and only finding vague, similar sounding titles
+* Setting the reader's context with a motivation section makes someone understand how to judge your choices
+* Visualizations that can stand alone, via legends, labels, and captions are more understandable and powerful
+
+## Include table
+
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
