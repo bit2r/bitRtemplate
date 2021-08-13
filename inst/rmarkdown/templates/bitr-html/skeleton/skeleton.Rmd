@@ -10,6 +10,7 @@ output:
     subtitle: "Using bitR Templeate"
     menu_url: "https://www.r-project.org/,https://r2bit.com/"
     menu_name: "R Project, bitR"
+    blank_target: false
 ---
 
 ```{r setup, echo=FALSE}

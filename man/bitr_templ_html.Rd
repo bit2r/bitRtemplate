@@ -12,6 +12,7 @@ bitr_templ_html(
   subtitle = NULL,
   menu_url = "https://r2bit.com/",
   menu_name = "bitR",
+  blank_target = TRUE,
   logo_img = NULL,
   path = ".",
   ...
@@ -27,6 +28,9 @@ bitr_templ_html(
 \item{menu_url}{character. menu url in header.}
 
 \item{menu_name}{character. munu url name in header.}
+
+\item{blank_target}{logical. choice the behavior that links opening within 
+the another page. if TURE then open another page (target = "_blank")}
 
 \item{logo_img}{character. name of logo image file on top left.}
 

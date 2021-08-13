@@ -11,6 +11,8 @@
 #' @param subtitle character. subtitle in header.
 #' @param menu_url character. menu url in header.
 #' @param menu_name character. munu url name in header.
+#' @param blank_target logical. choice the behavior that links opening within 
+#' the another page. if TURE then open another page (target = "_blank")
 #' @param logo_img character. name of logo image file on top left.
 #' @param path name of directory to generate report file. default is "."
 #' @param ... additional arguments provided to \code{html_document}
@@ -22,7 +24,7 @@
 #'
 bitr_templ_html <- function(toc = TRUE, maintitle = NULL, subtitle = NULL,
                             menu_url = "https://r2bit.com/", menu_name = "bitR",
-                            logo_img = NULL, path = ".", ...) {
+                            blank_target = TRUE, logo_img = NULL, path = ".", ...) {
   header <- "header_temp.html"
   footer <- "footer_temp.html"
   logo <- "r2bit.png"
@@ -52,8 +54,14 @@ bitr_templ_html <- function(toc = TRUE, maintitle = NULL, subtitle = NULL,
   menu_name <- stringr::str_split(menu_name, ",", simplify = TRUE)
 
   menus <- NULL
+  if (blank_target) {
+    target <- " target=\"_blank\"" 
+  } else  {
+    target <- ""
+  }
+  
   for (i in seq(menu_url)) {
-    menus <- paste(menus, glue::glue("<li><a href=\"{menu_url[i]}\" target=\"_blank\">{menu_name[i]}</a></li>"))
+    menus <- paste(menus, glue::glue("<li><a href=\"{menu_url[i]}\"{target}>{menu_name[i]}</a></li>"))
   }
 
   header_content <- sub("\\$menu\\$", menus, readLines(header_path))
